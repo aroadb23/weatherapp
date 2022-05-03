@@ -67,3 +67,7 @@ form {
   position: relative;
   bottom: 60px;
 }
+a {
+  position: relative;
+  left: 100px;
+}
