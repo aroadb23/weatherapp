@@ -4,7 +4,104 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="mx-auto mt-5" style="width: 1200px">
+      <div class="card border-primary mb-3 card w-75" style="width: 50rem">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <form id="city-search">
+                <input
+                  type="text"
+                  placeholder="Seacrh city"
+                  autocomplete="off"
+                  autofocus="on"
+                  id="city-input"
+                />
+              </form>
+
+              <button class="current-location" id="current-location">
+                Location 📍
+              </button>
+            </div>
+
+            <div class="col-6">
+              <h3>
+                <ul class="today">
+                  <li><strong>9</strong>℃ / <strong>1</strong>℃</li>
+                  <li><img class="weathericon" src="images/sunny.png" /></li>
+                  <li>Today</li>
+                </ul>
+              </h3>
+            </div>
+          </div>
+
+          <div><h5 class="current-date"></h5></div>
+          <h2>Vienna, Austria</h2>
+
+          <div class="currenttemp">
+            <span class="temperature" id="temperature">19</span>
+            <span class="units">
+              <a href="#" id="celsius-link">°C </a> |
+              <a href="#" id="farenheit-link">°F</a>
+            </span>
+          </div>
+
+          <div class="row">
+            <div class="col-3">
+              <ul>
+                <li><strong>9</strong>℃ / <strong>2</strong>℃</li>
+                <li><img class="weathericon" src="images/sunny.png" /></li>
+                <li><h5>Tuesday</h5></li>
+              </ul>
+            </div>
+
+            <div class="col-3">
+              <ul>
+                <li><strong>15</strong>℃ / <strong>4</strong>℃</li>
+                <li><img class="weathericon" src="images/sunny.png" /></li>
+                <li><h5>Wednesday</h5></li>
+              </ul>
+            </div>
+
+            <div class="col-3">
+              <ul>
+                <li><strong>16</strong>℃ / <strong>6</strong>℃</li>
+                <li>
+                  <img class="weathericon" src="images/sunnyintervals.png" />
+                </li>
+                <li><h5>Thursday</h5></li>
+              </ul>
+            </div>
+
+            <div class="col-3">
+              <ul>
+                <li><strong>9</strong>℃ / <strong>2</strong>℃</li>
+                <li><img class="weathericon" src="images/drizzle.png" /></li>
+                <li><h5>Friday</h5></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
 </html>
