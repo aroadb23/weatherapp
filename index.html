@@ -30,62 +30,69 @@
               <form id="city-search">
                 <input
                   type="text"
-                  placeholder="Seacrh city"
+                  placeholder="Enter a city"
                   autocomplete="off"
                   autofocus="on"
                   id="city-input"
                 />
+                <input type="submit" value="Search" class="btn btn-primary">
               </form>
 
-              <button class="current-location" id="current-location">
-                Location 📍
-              </button>
+             
             </div>
 
             <div class="col-6">
-              <h3>
-                <ul class="today">
-                  <li><strong>9</strong>℃ / <strong>1</strong>℃</li>
-                  <li><img class="weathericon" src="images/sunny.png" /></li>
-                  <li>Today</li>
-                </ul>
-              </h3>
+              <div class="row">
+                <div class="col-6">
+                  <h3>
+                    <ul class="today">
+                      <li><span class="units"><strong id="temperature"></strong><a href="#" id="celsius-link" class="active">°C</a> / <a href="#" id="fahrenheit-link">°F</a></span></li>
+                      <li>
+                        <img class="icon" src="" />
+                      </li>
+                      <li>Today</li>
+                    </ul>
+                  </h3>
+                </div>
+                <div class="col-6">
+                </br>
+                </br>
+                  <ul>
+                    <li id="description"></li>
+                    <li>Feels like <span id="sensation"></span>°C</li>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div><h5 class="current-date"></h5></div>
-          <h2>Vienna, Austria</h2>
-
-          <div class="currenttemp">
-            <span class="temperature" id="temperature">19</span>
-            <span class="units">
-              <a href="#" id="celsius-link">°C </a> |
-              <a href="#" id="farenheit-link">°F</a>
-            </span>
-          </div>
+          <div id="updated">Last update: <span id="date"></span></div>
+          <h2 id="city"></h2>
 
           <div class="row">
             <div class="col-3">
               <ul>
-                <li><strong>9</strong>℃ / <strong>2</strong>℃</li>
-                <li><img class="weathericon" src="images/sunny.png" /></li>
+                <li><strong>9</strong>°C / <strong>2</strong>°F</li>
+                <li><img class="icon" src="images/clouds.png" /></li>
                 <li><h5>Tuesday</h5></li>
               </ul>
             </div>
 
             <div class="col-3">
               <ul>
-                <li><strong>15</strong>℃ / <strong>4</strong>℃</li>
-                <li><img class="weathericon" src="images/sunny.png" /></li>
+                <li><strong>15</strong>°C / <strong>4</strong>°F</li>
+                <li><img class="icon" src="images/clouds.png" /></li>
                 <li><h5>Wednesday</h5></li>
               </ul>
             </div>
 
             <div class="col-3">
               <ul>
-                <li><strong>16</strong>℃ / <strong>6</strong>℃</li>
+                <li><strong>16</strong>°C / <strong>6</strong>°F</li>
                 <li>
-                  <img class="weathericon" src="images/sunnyintervals.png" />
+                  <img class="icon" src="images/clouds.png" />
                 </li>
                 <li><h5>Thursday</h5></li>
               </ul>
@@ -93,8 +100,8 @@
 
             <div class="col-3">
               <ul>
-                <li><strong>9</strong>℃ / <strong>2</strong>℃</li>
-                <li><img class="weathericon" src="images/drizzle.png" /></li>
+                <li><strong>9</strong>°C / <strong>2</strong>°F</li>
+                <li><img class="icon" src="images/clouds.png" /></li>
                 <li><h5>Friday</h5></li>
               </ul>
             </div>
@@ -108,6 +115,6 @@
       >
       by Aroa Diaz
     </p>
-    <script src="src/index.js"></script>
+    <script src="src/index2.js"></script>
   </body>
 </html>

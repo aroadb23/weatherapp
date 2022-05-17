@@ -23,15 +23,13 @@ li {
   list-style: none;
   font-family: sans-serif;
 }
+li:first-letter {
+  text-transform: capitalize;
+}
+
 form {
   position: relative;
   top: 40px;
-}
-
-.weathericon {
-  width: 80px;
-  height: 80px;
-  max-width: 100%;
 }
 
 .today {
@@ -46,27 +44,25 @@ form {
   bottom: 60px;
 }
 
-#current-location {
-  margin: 0 auto;
+#date {
   position: relative;
-  left: 200px;
-  top: 8px;
-  padding: 5px 10px;
-  background-color: rgb(83, 83, 230);
-  color: white;
-  border-radius: 5px;
-  border: 1px solid rgb(73, 73, 229);
-  transition: all 200ms ease-in-out;
+  margin-top: 80px;
 }
-#current-location:hover {
-  background: rgb(181, 169, 228);
-  color: white;
-}
-
-.current-date {
+#updated {
   position: relative;
   bottom: 60px;
 }
+
+.icon {
+  height: 80px;
+}
+
+.today .active:hover {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
 p {
   position: relative;
   left: 120px;
