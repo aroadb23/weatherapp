@@ -84,7 +84,6 @@ function retrievePosition(position) {
 
 function getCurrentLocation(event) {
   event.preventDefault();
-
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 let currentLocationButton = document.querySelector("#current-location");
