@@ -2,20 +2,20 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
-    `0${hours}`;
+    hours = `0${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    `0${minutes}`;
+    minutes = `0${minutes}`;
   }
   let days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
@@ -43,23 +43,25 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 4) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
             <div class="col-2">
-              <ul>
+              
             
-                <li><span id="weather-forecast-temperature-max"> ${Math.round(
-                  forecastDay.temp.max
-                )} °</span>/ <span id="weather-forecast-temperature-min">${Math.round(
+               <div> <span id="weather-forecast-temperature-max"> ${Math.round(
+                 forecastDay.temp.max
+               )} °</span>/ <span id="weather-forecast-temperature-min">${Math.round(
           forecastDay.temp.min
-        )}°</span></li>
-                <li><img class="icon" src="http://openweathermap.org/img/wn/${
+        )}°</span></div>
+                <img class="icon" src="http://openweathermap.org/img/wn/${
                   forecastDay.weather[0].icon
-                }@2x.png" /></li>
-                <li id="weather-forecast-date">${formatDay(forecastDay.dt)}</li>
-              </ul>
+                }@2x.png" />
+                <div id="weather-forecast-date">${formatDay(
+                  forecastDay.dt
+                )}</div>
+              
             </div>
             
             `;
@@ -105,7 +107,6 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "a1f0785e3b313d15d3ce6dd79864339d";
-
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
 
@@ -120,20 +121,21 @@ function handleSubmit(event) {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = celsiusTemperature;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#city-search");
@@ -144,4 +146,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 search("Madrid");

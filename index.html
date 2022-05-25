@@ -22,9 +22,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="mx-auto mt-5" style="width: 1200px">
-      <div class="card border-primary mb-3 card w-75" style="width: 50rem">
-        <div class="container">
+  <div class="container">
+    <div class="weather-app-wrapper">
+        <div class="weather-app">
           <div class="row">
             <div class="col-6">
               <form id="city-search">
@@ -37,7 +37,9 @@
                 />
                 <input type="submit" value="Search" class="btn btn-primary">
               </form>
-
+            </br>
+             <div id="updated">Last update <span id="date"></span></div>
+             <h2 id="city"></h2>
              
             </div>
 
@@ -46,7 +48,7 @@
                 <div class="col-6">
                   <h3>
                     <ul class="today">
-                      <li><span class="units"><strong id="temperature"></strong><a href="#" id="celsius-link" class="active">°C</a> / <a href="#" id="fahrenheit-link">°F</a></span></li>
+                      <li><span class="units"><strong id="temperature"></strong><a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link">°F</a></span></li>
                       <li>
                         <img class="icon" src="" />
                       </li>
@@ -55,8 +57,8 @@
                   </h3>
                 </div>
                 <div class="col-6">
-                </br>
-                </br>
+                 </br>
+              
                   <ul>
                     <li id="description"></li>
                     <li>Feels like <span id="sensation"></span>°C</li>
@@ -68,22 +70,20 @@
             </div>
           </div>
 
-          <div id="updated">Last update <span id="date"></span></div>
-          <h2 id="city"></h2>
-
-
-        <div class="weather-forecast" id="forecast">
           
-          </div>
+        </br>
+        </br>   
+          <div class="weather-forecast" id="forecast"> </div>
         </div>
-      </div>
-    </div>
-    <p>
-      <a href="https://github.com/aroadb23/weatherapp" target="_blank"
+     
+       <p>
+         <a href="https://github.com/aroadb23/weatherapp" target="_blank"
         >Open-source code</a
-      >
-      by Aroa Diaz
-    </p>
+        >
+         by Aroa Diaz
+        </p>
+    </div>
+   </div>
     <script src="src/index2.js"></script>
   </body>
 </html>

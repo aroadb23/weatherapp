@@ -1,23 +1,28 @@
+.weather-app-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+}
+.weather-app {
+  padding: 40px;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
 body {
   display: block;
 }
 h2 {
   color: black;
-  position: relative;
-  bottom: 60px;
   font-family: sans-serif;
   font-size: 60px;
   width: auto;
 }
 
-ul {
-  position: relative;
-  left: 60px;
-}
-
 li {
-  position: relative;
-  right: 100px;
   list-style-type: none;
   text-align: center;
   list-style: none;
@@ -27,50 +32,29 @@ li:first-letter {
   text-transform: capitalize;
 }
 
-form {
-  position: relative;
-  top: 40px;
-}
-
 .today {
   font-size: 25px;
-  position: relative;
-  top: 30px;
-  left: 100px;
-}
-
-.currenttemp {
-  position: relative;
-  bottom: 60px;
-}
-
-#date {
-  position: relative;
-  margin-top: 80px;
-}
-#updated {
-  position: relative;
-  bottom: 60px;
 }
 
 .icon {
   height: 80px;
 }
-
-.today .active:hover {
-  color: black;
+.today .active {
+  color: rgb(33, 33, 33);
   cursor: default;
+}
+#celsius-link:hover {
+  text-decoration: none;
+}
+#fahrenheit-link:hover {
   text-decoration: none;
 }
 
-p {
-  position: relative;
-  left: 120px;
-}
 .weather-forecast {
   margin-top: 10px;
   text-align: center;
   color: #000;
+  font-size: 13px;
 }
 
 #weather-forecast-temperature-min {
